@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="API Sanity Test Suite" verbose="4">
+
+	<test name="Go Rest API Test--GET User">
+		<classes>
+			<class name="com.qa.api.gorest.tests.GetUserTest" />
+		</classes>
+	</test>
+	<test name="Product API Test--Get Product">
+		<classes>
+			<class
+				name="com.qa.api.products.tests.GetProductsWithDeserializationTest" />
+		</classes>
+	</test>
+	<test name="Go Rest API Schema Test--GET User">
+		<classes>
+			<class name="com.qa.api.schema.tests.GoRestUserAPISchemaTest" />
+		</classes>
+	</test>
+	<test name="Amadeus API Test">
+		<classes>
+			<class name="com.qa.api.amadeus.tests.AmadeusAPITest" />
+		</classes>
+	</test>
+	<test name="Basic Auth API Test">
+		<classes>
+			<class name="com.qa.api.basicauth.tests.BasicAuthTest" />
+		</classes>
+	</test>
+
+</suite>
