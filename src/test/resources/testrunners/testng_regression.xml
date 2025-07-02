@@ -19,6 +19,12 @@
 			<class name="com.qa.api.gorest.tests.CreateUserTest" />
 		</classes>
 	</test>
+	
+		<test name="Go Rest API Test--Create User DDT">
+		<classes>
+			<class name="com.qa.api.gorest.tests.CreateUsersTestWithDDT" />
+		</classes>
+	</test>
 
 	<test name="Go Rest API Test--Update User">
 		<classes>
