@@ -43,5 +43,6 @@ public class GetAUserWithDeserializationTest2 extends BaseTest {
 				AuthType.BEARER_TOKEN, ContentType.JSON);
 		User userResponse=JsonUtils.deserialize(responseGET, User.class);
 		Assert.assertEquals(userResponse.getName(),user.getName());
+		//adding comments
 	}
 }
