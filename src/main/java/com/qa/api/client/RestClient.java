@@ -26,6 +26,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class RestClient<T> {
 
 	// define response specs:
+	//example
 	private ResponseSpecification responseSpec200 = expect().statusCode(200);
 	private ResponseSpecification responseSpec201 = expect().statusCode(201);
 	private ResponseSpecification responseSpec204 = expect().statusCode(204);
