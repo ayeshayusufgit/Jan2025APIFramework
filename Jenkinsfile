@@ -13,7 +13,7 @@ pipeline
             steps
             {
                  git 'https://github.com/jglick/simple-maven-project-with-tests.git'
-                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
+                 bat 'mvn -Dmaven.test.failure.ignore=true clean package'
             }
             post 
             {	
@@ -26,7 +26,7 @@ pipeline
         }
         
         
-        stage("Deploy to QA"){
+        stage('Deploy to QA'){
             steps{
                 echo("deploy to QA done")
             }
@@ -35,8 +35,8 @@ pipeline
         stage('Regression API Automation Test on QA') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                   git	https://github.com/ayeshayusufgit/Jan2025APIFramework.git			
-                   bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regression.xml"                 
+                   git 'https://github.com/ayeshayusufgit/Jan2025APIFramework.git'			
+                   bat 'mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regression.xml'                 
                 }
             }
         }
@@ -64,7 +64,7 @@ pipeline
                                   reportTitles: ''])
             }
         }
-        stage("Deploy to Stage"){
+        stage('Deploy to Stage'){
             steps{
                 echo("deploy to Stage")
             }
@@ -72,8 +72,8 @@ pipeline
         stage('Sanity API Automation Test on Stage') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git	https://github.com/ayeshayusufgit/Jan2025APIFramework.git
-                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml"
+                    git	'https://github.com/ayeshayusufgit/Jan2025APIFramework.git'
+                    bat 'mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml'
                 }
             }
         }
@@ -89,7 +89,7 @@ pipeline
                                   reportTitles: ''])
             }
         }
-        stage("Deploy to PROD"){
+        stage('Deploy to PROD'){
             steps{
                 echo("deploy to PROD")       
             }
